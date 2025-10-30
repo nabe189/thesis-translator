@@ -46,7 +46,14 @@ def main():
     # サイドバーの設定
     with st.sidebar:
         st.session_state["api_key"] = st.text_input(label="API key")
-        st.session_state["model_name"] = st.selectbox(label="Model", options=["gemini-2.0-flash", "gemini-2.0-flash-exp"])
+        st.session_state["model_name"] = st.selectbox(
+            label="Model",
+            options=[
+                "gemini-2.0-flash",
+                "gemini-2.0-flash-exp",
+                "gemini-2.5-flash",
+            ],
+        )
         st.session_state["message"] = st.text_area(label="プロンプト", value=DEFAULT_PROMPT, height=500)
 
     col1, col2 = st.columns([1,1])
